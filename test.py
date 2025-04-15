@@ -1,11 +1,11 @@
 import tensorflow as tf
-import pickle
 from model import Model
 from utils import build_dict, build_dataset, batch_iter
+import fickling
 
 
 with open("args.pickle", "rb") as f:
-    args = pickle.load(f)
+    args = fickling.load(f)
 
 print("Loading dictionary...")
 word_dict, reversed_dict, article_max_len, summary_max_len = build_dict("valid", args.toy)

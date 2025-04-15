@@ -6,6 +6,7 @@ import numpy as np
 from gensim.models.keyedvectors import KeyedVectors
 from gensim.test.utils import get_tmpfile
 from gensim.scripts.glove2word2vec import glove2word2vec
+import fickling
 
 
 train_article_path = "sumdata/train/train.article.txt"
@@ -51,7 +52,7 @@ def build_dict(step, toy=False):
 
     elif step == "valid":
         with open("word_dict.pickle", "rb") as f:
-            word_dict = pickle.load(f)
+            word_dict = fickling.load(f)
 
     reversed_dict = dict(zip(word_dict.values(), word_dict.keys()))
 
